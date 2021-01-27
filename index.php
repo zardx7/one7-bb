@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="img.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Checkers - Cartao
+    𝙤𝙣𝙚7 !
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
@@ -30,7 +30,7 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-toggle">
                     </div>
-                    <a class="navbar-brand" href="../../">Voltar</a>
+                    <a class="navbar-brand" href="t.me/y0rkzin">𝙤𝙣𝙚7 !</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -69,8 +69,7 @@
                                     - Reprovadas: <span class="badge badge-danger" id="cDie2">0</span>
                                     - Testadas: <span class="badge badge-info" id="total">0</span>
                                     - Carregadas: <span class="badge badge-primary" id="carregadas">0</span>
-                                    - Creditos: <span class="badge badge-dark saldo">0</span>
-                                </center>
+                                    </center>
                             </div>
                         </div>
                     </div>
@@ -100,8 +99,6 @@
                                     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>
                                     <script type="text/javascript">
                                         $(document).ready(function() {
-
-                                            getSaldo();
 
 
                                             $("#bode").hide();
@@ -153,7 +150,6 @@
                                                             success: function(resultado) {
                                                                 if (resultado.match("Aprovada")) {
                                                                     removelinha();
-                                                                    getSaldo();
                                                                     ap++;
                                                                     aprovadas(resultado + "");
                                                                 } else {
@@ -190,11 +186,6 @@
                                             $("#lista").val(lines.join("\n"));
                                         }
 
-                                        function getSaldo() {
-                                            $.get('../getSaldo.php', function(saldo) {
-                                                $('.saldo').text(saldo);
-                                            });
-                                        }
                                     </script>
                                     <script src="assets/js/core/jquery.min.js"></script>
                                     <script src="assets/js/core/popper.min.js"></script>

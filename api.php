@@ -106,7 +106,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'fon=9&bagis_turu=4&bagis_bolgesi=8&name=EOS+CENTER&gsm=53283891932&mail=eoscenter%40ig.com&note=nd&adet=1&price=10&card_a=' . $cc1 . '&card_b=' . $cc2 . '&card_c=' . $cc3 . '&card_d=' . $cc4 . '&month=' . $mes . '&year=' . $ano . '&cvv=' . $cvv . '');
-$est3Dgate = curl_exec($ch);
+echo $est3Dgate = curl_exec($ch);
 
 $PaReq = puxarstring($est3Dgate, 'value="', '"');
 $TermUrl = puxarstring($est3Dgate, 'name="TermUrl" value="', '"');
